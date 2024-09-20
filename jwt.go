@@ -15,7 +15,7 @@ const (
 )
 
 // DecodeJWTKey 解密jwt
-func DecodeJWTKey(ctx context.Context, path string) []byte {
+func DecodeJWTKey(ctx context.Context) []byte {
 	jwtKey := viper.GetString(jwtKeyPath)
 	enableJWT := viper.GetBool(jwtEnabledPath)
 	if enableJWT && jwtKey != "" {
